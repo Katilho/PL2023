@@ -20,6 +20,7 @@ while True:
                 mode = 1
             else:
                 mode = 0
+    print()
 
 
 
