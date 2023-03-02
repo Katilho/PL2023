@@ -1,3 +1,2 @@
-*.ipynb
 .vscode
-test.py
+test*

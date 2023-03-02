@@ -1,15 +1,16 @@
 import re
 
-def printTable(title, key_title, value_title, dictionary):
-    print()
-    print(f"{title}\n{key_title:<5} | {value_title}")
-    print("-" * 25)
+def printTable(title, key_title, value_title, dictionary, width = 10, separator = "|"):
+    print(f"{title}")
+    header = f"{key_title:<{width}} | {value_title}"
+    print(header)
+    print("-" * len(header))
     for key, value in dictionary.items():
-        print(f"{str(key):<5} -> {value}")
+        print(f"{str(key):<5} {separator} {value}")
     print()
 
 
-f = open("processos.txt")
+f = open("TPC3/processos.txt")
 regex = r':+(\d{4})-(\d{2})-(\d{2}):+'
 dic = {}
 for i, line in enumerate(f):
@@ -27,4 +28,4 @@ for i, line in enumerate(f):
 # dic = dict(sorted(dic.items())) # ordenação pelo ano
 dic = dict(sorted(dic.items(), key = lambda x:x[1])) # ordenação pelo numero de processos
 # print(dic)
-printTable("Frequência de processos por ano", "Ano", "Total", dic)
+printTable("Frequência de processos por ano", "Ano", "Total", dic, width=5)
