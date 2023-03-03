@@ -1,0 +1,168 @@
+[
+    {
+        "id": "575",
+        "dob": "1894-11-08",
+        "nome": "Aarao Pereira Silva",
+        "nome-pai": "Antonio Pereira Silva",
+        "nome-mae": "Francisca Campos Silva"
+    },
+    {
+        "id": "582",
+        "dob": "1909-05-12",
+        "nome": "Abel Almeida",
+        "nome-pai": "Antonio Manuel Almeida",
+        "nome-mae": "Teresa Maria Sousa"
+    },
+    {
+        "id": "569",
+        "dob": "1867-05-23",
+        "nome": "Abel Alves Barroso",
+        "nome-pai": "Antonio Alves Barroso",
+        "nome-mae": "Maria Jose Alvares Barroso",
+        "obs": "Bento Alvares Barroso,Tio Paterno. Proc.32057.   Domingos Jose Alvares Barroso,Tio Materno. Proc.32235.",
+        "parentesco": [
+            [
+                "Bento Alvares Barroso",
+                "Tio Paterno"
+            ],
+            [
+                "Domingos Jose Alvares Barroso",
+                "Tio Materno"
+            ]
+        ]
+    },
+    {
+        "id": "576",
+        "dob": "1896-11-28",
+        "nome": "Abel Augusto Oliveira",
+        "nome-pai": "Francisco Jose Oliveira",
+        "nome-mae": "Antonia Rosa Rebelo",
+        "obs": "Jose Antonio Oliveira,Irmao. Proc.5020.",
+        "parentesco": [
+            [
+                "Jose Antonio Oliveira",
+                "Irmao"
+            ]
+        ]
+    },
+    {
+        "id": "579",
+        "dob": "1904-05-27",
+        "nome": "Abel Gomes Abreu Reis",
+        "nome-pai": "Antonio Gomes Abreu",
+        "nome-mae": "Ana Sequeira Reis"
+    },
+    {
+        "id": "579",
+        "dob": "1904-05-21",
+        "nome": "Abel Marques Reis",
+        "nome-pai": "Jose Joaquim Marques Reis",
+        "nome-mae": "Bernardina Dantas"
+    },
+    {
+        "id": "578",
+        "dob": "1901-11-12",
+        "nome": "Abel Martins Pereira",
+        "nome-pai": "Serafim Martins Pereira",
+        "nome-mae": "Emilia Goncalves"
+    },
+    {
+        "id": "572",
+        "dob": "1883-02-01",
+        "nome": "Abel Pedro Pereira Freitas",
+        "nome-pai": "Joao Freitas Oliveira",
+        "nome-mae": "Cecilia Rosa Pereira"
+    },
+    {
+        "id": "578",
+        "dob": "1900-08-30",
+        "nome": "Abel Silva Carvalho",
+        "nome-pai": "Constantino Silva Rego",
+        "nome-mae": "Margarida Rosa Carvalho"
+    },
+    {
+        "id": "575",
+        "dob": "1894-04-30",
+        "nome": "Abelardo Jose Cerqueira Araujo",
+        "nome-pai": "Jose Maria Araujo",
+        "nome-mae": "Leopoldina Cerqueira Ribeiro Araujo"
+    },
+    {
+        "id": "575",
+        "dob": "1894-04-30",
+        "nome": "Abelardo Jose Cerqueira Araujo",
+        "nome-pai": "Jose Maria Araujo",
+        "nome-mae": "Leopoldina Cerqueira Ribeiro Araujo"
+    },
+    {
+        "id": "572",
+        "dob": "1883-11-24",
+        "nome": "Abilio Acacio Conceicao Guerreiro",
+        "nome-pai": "Jose Antonio Pereira Dantas Guerreiro",
+        "nome-mae": "Maria Rita Pereira Monteiro"
+    },
+    {
+        "id": "579",
+        "dob": "1902-10-23",
+        "nome": "Abilio Aires Sousa Pereira Guimaraes",
+        "nome-pai": "Joaquim Aires Sousa Pereira Guimaraes",
+        "nome-mae": "Josefa Rosa Gomes"
+    },
+    {
+        "id": "571",
+        "dob": "1880-01-24",
+        "nome": "Abilio Antonio Alves",
+        "nome-pai": "Joao Francisco Alves",
+        "nome-mae": "Maria Jesus Rocha"
+    },
+    {
+        "id": "573",
+        "dob": "1889-12-03",
+        "nome": "Abilio Augusto Arantes",
+        "nome-pai": "Sebastiao Arantes",
+        "nome-mae": "Maria Sousa"
+    },
+    {
+        "id": "581",
+        "dob": "1908-08-11",
+        "nome": "Abilio Augusto Galvao",
+        "nome-pai": "Antonio Augusto Galvao",
+        "nome-mae": "Perpetua Duarte Galvao"
+    },
+    {
+        "id": "581",
+        "dob": "1908-05-20",
+        "nome": "Abilio Augusto Magalhaes",
+        "nome-pai": "Maria Jesus Magalhaes"
+    },
+    {
+        "id": "581",
+        "dob": "1908-05-20",
+        "nome": "Abilio Augusto Magalhaes",
+        "nome-pai": "Maria Jesus Magalhaes"
+    },
+    {
+        "id": "581",
+        "dob": "1908-05-20",
+        "nome": "Abilio Augusto Magalhaes",
+        "nome-pai": "Maria Jesus Magalhaes"
+    },
+    {
+        "id": "569",
+        "dob": "1869-12-02",
+        "nome": "Abilio Augusto Santos",
+        "nome-pai": "Jose Joaquim Santos",
+        "nome-mae": "Teresa Jesus",
+        "obs": "Antonio Jose Adao,Tio Materno. Proc.12530.   Albino Antonio Ribeiro,Primo Paterno. Proc.12721.",
+        "parentesco": [
+            [
+                "Antonio Jose Adao",
+                "Tio Materno"
+            ],
+            [
+                "Albino Antonio Ribeiro",
+                "Primo Paterno"
+            ]
+        ]
+    }
+]

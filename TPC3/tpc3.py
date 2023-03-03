@@ -1,5 +1,6 @@
 import re
 import math
+import json
 
 def printTable(title, key_title, value_title, dictionary, width = 5, separator = "|"):
     print(f"{title}")
@@ -103,6 +104,14 @@ def get_graus_parentesco(data):
     return freq_final
 
 
+# Exercício d)
+def reg20_to_json(data, filename):
+
+    primeiros_20 = data[:20]
+
+    with open(filename, 'w') as f:
+        json.dump(primeiros_20, f, indent=4)
+
 
 
 
@@ -156,9 +165,17 @@ for n, line in enumerate(file):
 #     if "obs" in p:
 #         print(p["obs"])
 
+# Ex a)
 # get_process_per_year(processos)
+
+# Ex b)
 # get_process_per_century(processos)
-get_graus_parentesco(processos)
+
+# Ex c)
+# get_graus_parentesco(processos)
+
+# Ex d)
+reg20_to_json(processos, "20reg.json")
 
 
 file.close()
