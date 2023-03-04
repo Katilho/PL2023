@@ -118,7 +118,7 @@ def reg20_to_json(data, filename):
 ### MAIN
 file = open("processos.txt")
 processos = []
-regex = r"(([A-Z][a-z ,]+)+),(\w+\s*\w*\s*\w+)\.[^::]"
+regex = r"(([A-Z][a-z ,]+)+),(\w+\s*\w*\s*\w+)\.\s*Proc.\d+"
 pattern = re.compile(regex)
 
 for n, line in enumerate(file):
@@ -166,13 +166,13 @@ for n, line in enumerate(file):
 #         print(p["obs"])
 
 # Ex a)
-# get_process_per_year(processos)
+get_process_per_year(processos)
 
 # Ex b)
-# get_process_per_century(processos)
+get_process_per_century(processos)
 
 # Ex c)
-# get_graus_parentesco(processos)
+get_graus_parentesco(processos)
 
 # Ex d)
 reg20_to_json(processos, "20reg.json")
