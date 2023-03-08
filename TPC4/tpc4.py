@@ -1,5 +1,14 @@
 import json
 import re
+from math import prod
+
+my_built_inos = {
+    "sum": sum,
+    "media": lambda x:sum(x)/len(x),
+    "mult": prod,
+    "max": max,
+    "min": min
+}
 
 class FieldInfo:
   
@@ -33,7 +42,7 @@ class FieldInfo:
         if self.lenght:
             return self.lenght[1]
         else:
-            print(f"ATENÇÃO! O CAMPO {self.name} NÃO É UMA LISTA!! TOP_LENGHT REORNOU NONE")
+            print(f"ATENÇÃO! O CAMPO {self.name} NÃO É UMA LISTA!! TOP_LENGHT RETORNOU NONE")
             return None
 
     def get_func(self):
@@ -74,8 +83,9 @@ def read_csv(csv_file_path):
                 # Verificação de função
                 if obj_field.func:
                     # Aplicar funções mais concretamente, talvez com o getattr() to retrieve the function based on its name
-                    # function = getattr(__builtins__, function_name)
-                    line_dict[key_name] = sum(final_list)
+                    # line_dict[key_name] = sum(final_list)
+                    function = my_built_inos[obj_field.func]
+                    line_dict[key_name] = function(final_list)
             fields_i += 1
 
         data.append(line_dict)
@@ -93,7 +103,5 @@ def csv_to_json(csv_file_path, json_file_path):
     write_json(data, json_file_path)
 
 
-# campo = FieldInfo("campo{3,5}::sum")
-# r = campo.is_list()
 
 csv_to_json("file.csv", "result.json")
