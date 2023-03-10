@@ -2,10 +2,11 @@ import json
 import re
 from math import prod
 
-my_built_inos = {
+my_built_ins = {
     "sum": sum,
     "media": lambda x:sum(x)/len(x),
     "mult": prod,
+    "prod": prod,
     "max": max,
     "min": min
 }
@@ -30,10 +31,13 @@ class FieldInfo:
             self.lenght = groups
             
             func_param = re.search(r"::(\w+)", string)
-            func_name = func_param.group(1)
             if func_param:
-                self.func = func_name
-                self.name += f"_{func_name}"
+                func_name = func_param.group(1)
+                if func_name in my_built_ins:
+                    self.func = func_name
+                    self.name += f"_{func_name}"
+                else:
+                    print(f'Atenção: Função pedida no campo "{string}" não está implementada!')
 
     def is_list(self):
         return self.lenght is not None
@@ -42,7 +46,7 @@ class FieldInfo:
         if self.lenght:
             return self.lenght[1]
         else:
-            print(f"ATENÇÃO! O CAMPO {self.name} NÃO É UMA LISTA!! TOP_LENGHT RETORNOU NONE")
+            # print(f"ATENÇÃO! O CAMPO {self.name} NÃO É UMA LISTA!! TOP_LENGHT RETORNOU NONE")
             return None
 
     def get_func(self):
@@ -54,6 +58,7 @@ def read_csv(csv_file_path):
     ficheiro = open(csv_file_path, encoding='utf-8')
     data = []
 
+    # Verificação do nome dos campos do ficheiro, bem como eventuais funções inerentes.
     header = ficheiro.readline()
     arr_header = re.findall(r'[^,{ \n]+(?:{[^\}]+}(?:\:\:\w+)?)?', header)
     
@@ -61,6 +66,8 @@ def read_csv(csv_file_path):
     for field in arr_header:
         fields_info.append(FieldInfo(field))
 
+
+    # Verificação das linhas do ficheiro.
     for line in ficheiro:
         line_split = line.split(",")
         line_i = 0
@@ -82,9 +89,7 @@ def read_csv(csv_file_path):
                 line_dict[key_name] = final_list
                 # Verificação de função
                 if obj_field.func:
-                    # Aplicar funções mais concretamente, talvez com o getattr() to retrieve the function based on its name
-                    # line_dict[key_name] = sum(final_list)
-                    function = my_built_inos[obj_field.func]
+                    function = my_built_ins[obj_field.func]
                     line_dict[key_name] = function(final_list)
             fields_i += 1
 
