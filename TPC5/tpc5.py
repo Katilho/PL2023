@@ -20,12 +20,13 @@ states = (
 def printed_saldo(saldo: float):
     euro = int(saldo)
     try: # Se o saldo for maior que 1 euro, apresenta euro e centimos.
-        cents = int(saldo%euro * 100)
+        cents = round(saldo%euro, 2)
+        cents = int(cents * 100)
    
     except ZeroDivisionError: # Se o saldo for menor que 1 euro, apresenta apenas os centimos.
         cents = int(saldo*100)
 
-    res = f"{f'{euro}e' if euro>0 else ''}{cents}c"
+    res = f"{f'{euro}e' if euro>0 else ''}{cents:0<2}c"
     return res
 
 
@@ -38,7 +39,7 @@ def t_on_ABORTAR(t):
     r'ABORTAR'
     global saldo
     # tratar de lógico de moedas a devolver - OPCIONAL
-    print(f"MAQ: Troco = {printed_saldo(saldo)}; Volte sempre!")
+    print(f"MAQ: Troco = {printed_saldo(saldo)}")
     saldo = 0
     lexer.begin('off')
 
@@ -70,10 +71,9 @@ def t_on_MOEDAS(t):
     return t
 
 def t_on_NUMERO(t):
-    r'T=(\d{9}|00\d+)'
+    r'T\s?=\s?(\d{9}|00\d+)'
     global saldo
-    grupos = t.lexer.lexmatch.groups()
-    num = t.value.split("=")[1]
+    num = re.split(r" ?= ?", t.value)[1]
 
     if re.match("(?:601|641)\d+", num):
         print("MAQ: Chamada bloqueada (começa com 601 ou 641). Digite outro número.", end=" ")
@@ -118,7 +118,7 @@ t_ANY_ignore  = ' \t'
 
 def t_ANY_error(t):
     skiped_token = re.split(r" \n", t.value, 1)[0]
-    print(f"MAQ: Illegal input: {skiped_token}")
+    print("MAQ: Illegal input.")
     t.lexer.skip(len(skiped_token))
 
 
