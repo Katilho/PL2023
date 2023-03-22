@@ -56,8 +56,8 @@ def t_TYPE(t):
     return t
 
 def t_FUNCTIONNAME(t):
-    # r'[a-z_]\w*?(?<=function)'
-    r'[a-z]\w*(?=(?=\()|(?=\{))'
+    r'(?<=function\s)[a-z_]\w*|[a-z]\w*(?=(?=\()|(?=\{))'
+    # r'[a-z]\w*(?=(?=\()|(?=\{))'
     return t
 
 def t_FOR(t):
